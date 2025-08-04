@@ -10,7 +10,6 @@ This a possible tech stack subject to change of course.
 - Python
 - SQL
 - JSON/CSV
-- Sitecore SXA (integration)
 
 ## Folder Structure
 ```
