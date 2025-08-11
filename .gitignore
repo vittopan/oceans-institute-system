@@ -4,10 +4,6 @@
 *.db
  
  
-# do not ignore the test database
-!test.db
- 
- 
 # Local venv
 application-env/
  
