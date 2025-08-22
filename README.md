@@ -1,5 +1,15 @@
 # Oceans Institute System
 
+## Contributors
+| UWA ID   |  Name    | Github Username |
+|----------|----------|----------|
+| 23600251   | Linshan Xiao   | LinshanXiao  |
+| 21972356   | Hannah Meagher | hrmeagher |
+| 23169267   | Kaoma Kabange    | Kaomakabange |
+| 23449203   | Spencer Kinder  | SpKinder    |
+| 23443635   | Vittorio Panaia    | vittopan |
+| 23664629   | Yusuke Matsuki  | DaimyOu    |  
+
 Prototype system for UWA Oceans Institute to integrate and display member expertise data.
 
 ## Features
@@ -23,6 +33,33 @@ oceans-institute-system/
 └── .gitignore
 ```
 
-## Author
-Vittorio Panaia, Hannah Meager, Kaoma Kabange, Linshan Xiao, Spencer Kinder, Yusuke Matsuki
+---
+
+# Running the App Locally
+
+### 1. Clone the repository
+```
+git clone https://github.com/vittopan/oceans-institute-system.git
+```
+
+### 2. Create a virtual environment and activate it
+```
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
+```
+### 3. Install dependencies
+```
+pip install -r requirements.txt
+```
+### 4. Initialize the database
+```
+flask db upgrade
+```
+### 5. Run the app 
+```
+flask run
+```
+Access the app at http://localhost:5000
+
+---
 
