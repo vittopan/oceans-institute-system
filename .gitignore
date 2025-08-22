@@ -2,11 +2,9 @@
  
 # SQLite database file
 *.db
- 
- 
-# Local venv
-application-env/
- 
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -144,6 +142,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+*venv*/
+*env*/
+**/pyvenv.cfg
  
 # Spyder project settings
 .spyderproject
