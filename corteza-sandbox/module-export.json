@@ -1,0 +1,1279 @@
+{
+  "type": "module",
+  "list": [
+    {
+      "moduleID": "457843872267108353",
+      "namespaceID": "457836436119224321",
+      "name": "TestModule",
+      "handle": "test_module",
+      "fields": [
+        {
+          "fieldID": "457843872267173889",
+          "name": "Title",
+          "kind": "String",
+          "label": "Test Title",
+          "defaultValue": [],
+          "maxLength": 0,
+          "isRequired": false,
+          "isMulti": false,
+          "isSystem": false,
+          "isSortable": true,
+          "isFilterable": true,
+          "options": {
+            "description": {
+              "view": ""
+            },
+            "hint": {
+              "view": ""
+            },
+            "multiLine": false,
+            "useRichTextEditor": false,
+            "multiDelimiter": "\n"
+          },
+          "expressions": {},
+          "config": {
+            "dal": {
+              "encodingStrategy": null
+            },
+            "privacy": {
+              "sensitivityLevelID": "0",
+              "usageDisclosure": ""
+            },
+            "recordRevisions": {
+              "enabled": false
+            }
+          },
+          "canUpdateRecordValue": true,
+          "canReadRecordValue": true
+        }
+      ],
+      "issues": [],
+      "config": {
+        "dal": {
+          "connectionID": "457810218647093249",
+          "ident": "",
+          "systemFieldEncoding": {
+            "id": null,
+            "revision": null,
+            "moduleID": null,
+            "namespaceID": null,
+            "ownedBy": null,
+            "createdBy": null,
+            "createdAt": null,
+            "updatedBy": null,
+            "updatedAt": null,
+            "deletedBy": null,
+            "deletedAt": null,
+            "meta": null
+          },
+          "constraints": null
+        },
+        "privacy": {
+          "sensitivityLevelID": "0",
+          "usageDisclosure": ""
+        },
+        "discovery": {
+          "public": {
+            "result": [
+              {
+                "lang": "",
+                "fields": []
+              }
+            ]
+          },
+          "private": {
+            "result": [
+              {
+                "lang": "",
+                "fields": []
+              }
+            ]
+          },
+          "protected": {
+            "result": [
+              {
+                "lang": "",
+                "fields": []
+              }
+            ]
+          }
+        },
+        "recordRevisions": {
+          "enabled": false,
+          "ident": ""
+        },
+        "recordDeDup": {
+          "rules": []
+        }
+      },
+      "meta": {
+        "ui": {
+          "admin": {
+            "fields": []
+          }
+        }
+      },
+      "labels": {},
+      "createdAt": "2025-08-25T12:30:59.000Z",
+      "canUpdateModule": true,
+      "canDeleteModule": true,
+      "canCreateRecord": true,
+      "canCreateOwnedRecord": true,
+      "canGrant": true
+    },
+    {
+      "moduleID": "457843872268353537",
+      "namespaceID": "457836436119224321",
+      "name": "Stakeholders",
+      "handle": "stakeholders",
+      "fields": [
+        {
+          "fieldID": "457843872268419073",
+          "name": "first_name",
+          "kind": "String",
+          "label": "First Name",
+          "defaultValue": [],
+          "maxLength": 0,
+          "isRequired": true,
+          "isMulti": false,
+          "isSystem": false,
+          "isSortable": true,
+          "isFilterable": true,
+          "options": {
+            "description": {
+              "view": ""
+            },
+            "hint": {
+              "view": ""
+            },
+            "multiLine": false,
+            "useRichTextEditor": false,
+            "multiDelimiter": "\n"
+          },
+          "expressions": {},
+          "config": {
+            "dal": {
+              "encodingStrategy": null
+            },
+            "privacy": {
+              "sensitivityLevelID": "0",
+              "usageDisclosure": ""
+            },
+            "recordRevisions": {
+              "enabled": false
+            }
+          },
+          "canUpdateRecordValue": true,
+          "canReadRecordValue": true
+        },
+        {
+          "fieldID": "457843872268484609",
+          "name": "last_name",
+          "kind": "String",
+          "label": "Last Name",
+          "defaultValue": [],
+          "maxLength": 0,
+          "isRequired": true,
+          "isMulti": false,
+          "isSystem": false,
+          "isSortable": true,
+          "isFilterable": true,
+          "options": {
+            "description": {
+              "view": ""
+            },
+            "hint": {
+              "view": ""
+            },
+            "multiLine": false,
+            "useRichTextEditor": false,
+            "multiDelimiter": "\n"
+          },
+          "expressions": {},
+          "config": {
+            "dal": {
+              "encodingStrategy": null
+            },
+            "privacy": {
+              "sensitivityLevelID": "0",
+              "usageDisclosure": ""
+            },
+            "recordRevisions": {
+              "enabled": false
+            }
+          },
+          "canUpdateRecordValue": true,
+          "canReadRecordValue": true
+        },
+        {
+          "fieldID": "457843872268550145",
+          "name": "sector",
+          "kind": "Record",
+          "label": "Sector",
+          "defaultValue": [],
+          "maxLength": 0,
+          "isRequired": true,
+          "isMulti": false,
+          "isSystem": false,
+          "isSortable": true,
+          "isFilterable": true,
+          "options": {
+            "description": {
+              "view": ""
+            },
+            "hint": {
+              "view": ""
+            },
+            "moduleID": "0",
+            "labelField": "",
+            "recordLabelField": "",
+            "queryFields": [],
+            "selectType": "",
+            "multiDelimiter": "\n",
+            "isUniqueMultiValue": false
+          },
+          "expressions": {},
+          "config": {
+            "dal": {
+              "encodingStrategy": null
+            },
+            "privacy": {
+              "sensitivityLevelID": "0",
+              "usageDisclosure": ""
+            },
+            "recordRevisions": {
+              "enabled": false
+            }
+          },
+          "canUpdateRecordValue": true,
+          "canReadRecordValue": true
+        },
+        {
+          "fieldID": "457843872268615681",
+          "name": "notes",
+          "kind": "String",
+          "label": "Notes",
+          "defaultValue": [],
+          "maxLength": 0,
+          "isRequired": false,
+          "isMulti": false,
+          "isSystem": false,
+          "isSortable": true,
+          "isFilterable": true,
+          "options": {
+            "description": {
+              "view": ""
+            },
+            "hint": {
+              "view": ""
+            },
+            "multiLine": true,
+            "useRichTextEditor": true,
+            "multiDelimiter": "\n"
+          },
+          "expressions": {},
+          "config": {
+            "dal": {
+              "encodingStrategy": null
+            },
+            "privacy": {
+              "sensitivityLevelID": "0",
+              "usageDisclosure": ""
+            },
+            "recordRevisions": {
+              "enabled": false
+            }
+          },
+          "canUpdateRecordValue": true,
+          "canReadRecordValue": true
+        },
+        {
+          "fieldID": "457843872268681217",
+          "name": "inactivity_threshold_days",
+          "kind": "Number",
+          "label": "Contact Frequency",
+          "defaultValue": [],
+          "maxLength": 0,
+          "isRequired": false,
+          "isMulti": false,
+          "isSystem": false,
+          "isSortable": true,
+          "isFilterable": true,
+          "options": {
+            "description": {
+              "view": ""
+            },
+            "hint": {
+              "view": ""
+            },
+            "presetFormat": "custom",
+            "precision": 3,
+            "multiDelimiter": "\n",
+            "display": "number",
+            "format": "",
+            "prefix": "",
+            "suffix": "",
+            "min": 0,
+            "max": 100,
+            "showValue": true,
+            "showRelative": true,
+            "showProgress": false,
+            "animated": false,
+            "variant": "success",
+            "thresholds": []
+          },
+          "expressions": {},
+          "config": {
+            "dal": {
+              "encodingStrategy": null
+            },
+            "privacy": {
+              "sensitivityLevelID": "0",
+              "usageDisclosure": ""
+            },
+            "recordRevisions": {
+              "enabled": false
+            }
+          },
+          "canUpdateRecordValue": true,
+          "canReadRecordValue": true
+        }
+      ],
+      "issues": [],
+      "config": {
+        "dal": {
+          "connectionID": "457810218647093249",
+          "ident": "",
+          "systemFieldEncoding": {
+            "id": null,
+            "revision": null,
+            "moduleID": null,
+            "namespaceID": null,
+            "ownedBy": null,
+            "createdBy": null,
+            "createdAt": null,
+            "updatedBy": null,
+            "updatedAt": null,
+            "deletedBy": null,
+            "deletedAt": null,
+            "meta": null
+          },
+          "constraints": null
+        },
+        "privacy": {
+          "sensitivityLevelID": "0",
+          "usageDisclosure": ""
+        },
+        "discovery": {
+          "public": {
+            "result": [
+              {
+                "lang": "",
+                "fields": []
+              }
+            ]
+          },
+          "private": {
+            "result": [
+              {
+                "lang": "",
+                "fields": []
+              }
+            ]
+          },
+          "protected": {
+            "result": [
+              {
+                "lang": "",
+                "fields": []
+              }
+            ]
+          }
+        },
+        "recordRevisions": {
+          "enabled": false,
+          "ident": ""
+        },
+        "recordDeDup": {
+          "rules": []
+        }
+      },
+      "meta": {
+        "ui": {
+          "admin": {
+            "fields": []
+          }
+        }
+      },
+      "labels": {},
+      "createdAt": "2025-08-25T12:36:54.000Z",
+      "canUpdateModule": true,
+      "canDeleteModule": true,
+      "canCreateRecord": true,
+      "canCreateOwnedRecord": true,
+      "canGrant": true
+    },
+    {
+      "moduleID": "457843872271433729",
+      "namespaceID": "457836436119224321",
+      "name": "StakeholderEmail",
+      "handle": "stakeholder_email",
+      "fields": [
+        {
+          "fieldID": "457843872271499265",
+          "name": "stakeholder",
+          "kind": "Record",
+          "label": "Stakeholder",
+          "defaultValue": [],
+          "maxLength": 0,
+          "isRequired": false,
+          "isMulti": false,
+          "isSystem": false,
+          "isSortable": true,
+          "isFilterable": true,
+          "options": {
+            "description": {
+              "view": ""
+            },
+            "hint": {
+              "view": ""
+            },
+            "moduleID": "457843872268353537",
+            "labelField": "",
+            "recordLabelField": "",
+            "queryFields": [],
+            "selectType": "default",
+            "multiDelimiter": "\n",
+            "isUniqueMultiValue": false
+          },
+          "expressions": {},
+          "config": {
+            "dal": {
+              "encodingStrategy": null
+            },
+            "privacy": {
+              "sensitivityLevelID": "0",
+              "usageDisclosure": ""
+            },
+            "recordRevisions": {
+              "enabled": false
+            }
+          },
+          "canUpdateRecordValue": true,
+          "canReadRecordValue": true
+        },
+        {
+          "fieldID": "457843872271564801",
+          "name": "email",
+          "kind": "Email",
+          "label": "Email",
+          "defaultValue": [],
+          "maxLength": 0,
+          "isRequired": false,
+          "isMulti": false,
+          "isSystem": false,
+          "isSortable": true,
+          "isFilterable": true,
+          "options": {
+            "description": {
+              "view": ""
+            },
+            "hint": {
+              "view": ""
+            },
+            "outputPlain": true,
+            "multiDelimiter": "\n"
+          },
+          "expressions": {},
+          "config": {
+            "dal": {
+              "encodingStrategy": null
+            },
+            "privacy": {
+              "sensitivityLevelID": "0",
+              "usageDisclosure": ""
+            },
+            "recordRevisions": {
+              "enabled": false
+            }
+          },
+          "canUpdateRecordValue": true,
+          "canReadRecordValue": true
+        },
+        {
+          "fieldID": "457843872271630337",
+          "name": "is_primary",
+          "kind": "Bool",
+          "label": "Primary Email",
+          "defaultValue": [],
+          "maxLength": 0,
+          "isRequired": false,
+          "isMulti": false,
+          "isSystem": false,
+          "isSortable": true,
+          "isFilterable": true,
+          "options": {
+            "description": {
+              "view": ""
+            },
+            "hint": {
+              "view": ""
+            },
+            "trueLabel": "",
+            "falseLabel": "",
+            "switch": false
+          },
+          "expressions": {},
+          "config": {
+            "dal": {
+              "encodingStrategy": null
+            },
+            "privacy": {
+              "sensitivityLevelID": "0",
+              "usageDisclosure": ""
+            },
+            "recordRevisions": {
+              "enabled": false
+            }
+          },
+          "canUpdateRecordValue": true,
+          "canReadRecordValue": true
+        },
+        {
+          "fieldID": "457843872271695873",
+          "name": "is_active",
+          "kind": "Bool",
+          "label": "Email is active",
+          "defaultValue": [],
+          "maxLength": 0,
+          "isRequired": false,
+          "isMulti": false,
+          "isSystem": false,
+          "isSortable": true,
+          "isFilterable": true,
+          "options": {
+            "description": {
+              "view": ""
+            },
+            "hint": {
+              "view": ""
+            },
+            "trueLabel": "",
+            "falseLabel": "",
+            "switch": false
+          },
+          "expressions": {},
+          "config": {
+            "dal": {
+              "encodingStrategy": null
+            },
+            "privacy": {
+              "sensitivityLevelID": "0",
+              "usageDisclosure": ""
+            },
+            "recordRevisions": {
+              "enabled": false
+            }
+          },
+          "canUpdateRecordValue": true,
+          "canReadRecordValue": true
+        }
+      ],
+      "issues": [],
+      "config": {
+        "dal": {
+          "connectionID": "457810218647093249",
+          "ident": "",
+          "systemFieldEncoding": {
+            "id": null,
+            "revision": null,
+            "moduleID": null,
+            "namespaceID": null,
+            "ownedBy": null,
+            "createdBy": null,
+            "createdAt": null,
+            "updatedBy": null,
+            "updatedAt": null,
+            "deletedBy": null,
+            "deletedAt": null,
+            "meta": null
+          },
+          "constraints": null
+        },
+        "privacy": {
+          "sensitivityLevelID": "0",
+          "usageDisclosure": ""
+        },
+        "discovery": {
+          "public": {
+            "result": [
+              {
+                "lang": "",
+                "fields": []
+              }
+            ]
+          },
+          "private": {
+            "result": [
+              {
+                "lang": "",
+                "fields": []
+              }
+            ]
+          },
+          "protected": {
+            "result": [
+              {
+                "lang": "",
+                "fields": []
+              }
+            ]
+          }
+        },
+        "recordRevisions": {
+          "enabled": false,
+          "ident": ""
+        },
+        "recordDeDup": {
+          "rules": []
+        }
+      },
+      "meta": {
+        "ui": {
+          "admin": {
+            "fields": []
+          }
+        }
+      },
+      "labels": {},
+      "createdAt": "2025-08-25T12:39:05.000Z",
+      "canUpdateModule": true,
+      "canDeleteModule": true,
+      "canCreateRecord": true,
+      "canCreateOwnedRecord": true,
+      "canGrant": true
+    },
+    {
+      "moduleID": "457843872274120705",
+      "namespaceID": "457836436119224321",
+      "name": "StakeholderPhone",
+      "handle": "stakeholder_phone",
+      "fields": [
+        {
+          "fieldID": "457843872274186241",
+          "name": "stakeholder",
+          "kind": "Record",
+          "label": "Stakeholder",
+          "defaultValue": [],
+          "maxLength": 0,
+          "isRequired": true,
+          "isMulti": false,
+          "isSystem": false,
+          "isSortable": true,
+          "isFilterable": true,
+          "options": {
+            "description": {
+              "view": ""
+            },
+            "hint": {
+              "view": ""
+            },
+            "moduleID": "457843872268353537",
+            "labelField": "",
+            "recordLabelField": "",
+            "queryFields": [],
+            "selectType": "default",
+            "multiDelimiter": "\n",
+            "isUniqueMultiValue": false,
+            "prefilter": ""
+          },
+          "expressions": {},
+          "config": {
+            "dal": {
+              "encodingStrategy": null
+            },
+            "privacy": {
+              "sensitivityLevelID": "0",
+              "usageDisclosure": ""
+            },
+            "recordRevisions": {
+              "enabled": false
+            }
+          },
+          "canUpdateRecordValue": true,
+          "canReadRecordValue": true
+        },
+        {
+          "fieldID": "457843872274251777",
+          "name": "phone",
+          "kind": "String",
+          "label": "Phone",
+          "defaultValue": [],
+          "maxLength": 0,
+          "isRequired": true,
+          "isMulti": false,
+          "isSystem": false,
+          "isSortable": true,
+          "isFilterable": true,
+          "options": {
+            "description": {
+              "view": ""
+            },
+            "hint": {
+              "view": ""
+            },
+            "multiLine": false,
+            "useRichTextEditor": false,
+            "multiDelimiter": "\n"
+          },
+          "expressions": {},
+          "config": {
+            "dal": {
+              "encodingStrategy": null
+            },
+            "privacy": {
+              "sensitivityLevelID": "0",
+              "usageDisclosure": ""
+            },
+            "recordRevisions": {
+              "enabled": false
+            }
+          },
+          "canUpdateRecordValue": true,
+          "canReadRecordValue": true
+        },
+        {
+          "fieldID": "457843872274317313",
+          "name": "phone_type",
+          "kind": "Select",
+          "label": "Mobile/Work/Home/Other",
+          "defaultValue": [],
+          "maxLength": 0,
+          "isRequired": true,
+          "isMulti": false,
+          "isSystem": false,
+          "isSortable": true,
+          "isFilterable": true,
+          "options": {
+            "description": {
+              "view": ""
+            },
+            "hint": {
+              "view": ""
+            },
+            "options": [
+              {
+                "value": "Mobile",
+                "text": "Mobile",
+                "style": {
+                  "textColor": "#0B344E",
+                  "backgroundColor": "#E4E9EF"
+                }
+              },
+              {
+                "value": "Work",
+                "text": "Work",
+                "style": {
+                  "textColor": "#0B344E",
+                  "backgroundColor": "#E4E9EF"
+                }
+              },
+              {
+                "value": "Home",
+                "text": "Home",
+                "style": {
+                  "textColor": "#0B344E",
+                  "backgroundColor": "#E4E9EF"
+                }
+              },
+              {
+                "value": "Other",
+                "text": "Other",
+                "style": {
+                  "textColor": "#0B344E",
+                  "backgroundColor": "#E4E9EF"
+                }
+              }
+            ],
+            "selectType": "default",
+            "multiDelimiter": "\n",
+            "isUniqueMultiValue": true,
+            "displayType": "text"
+          },
+          "expressions": {},
+          "config": {
+            "dal": {
+              "encodingStrategy": null
+            },
+            "privacy": {
+              "sensitivityLevelID": "0",
+              "usageDisclosure": ""
+            },
+            "recordRevisions": {
+              "enabled": false
+            }
+          },
+          "canUpdateRecordValue": true,
+          "canReadRecordValue": true
+        },
+        {
+          "fieldID": "457843872274382849",
+          "name": "is_primary",
+          "kind": "Bool",
+          "label": "Primary Phone?",
+          "defaultValue": [],
+          "maxLength": 0,
+          "isRequired": true,
+          "isMulti": false,
+          "isSystem": false,
+          "isSortable": true,
+          "isFilterable": true,
+          "options": {
+            "description": {
+              "view": ""
+            },
+            "hint": {
+              "view": ""
+            },
+            "trueLabel": "",
+            "falseLabel": "",
+            "switch": false
+          },
+          "expressions": {},
+          "config": {
+            "dal": {
+              "encodingStrategy": null
+            },
+            "privacy": {
+              "sensitivityLevelID": "0",
+              "usageDisclosure": ""
+            },
+            "recordRevisions": {
+              "enabled": false
+            }
+          },
+          "canUpdateRecordValue": true,
+          "canReadRecordValue": true
+        }
+      ],
+      "issues": [],
+      "config": {
+        "dal": {
+          "connectionID": "457810218647093249",
+          "ident": "",
+          "systemFieldEncoding": {
+            "id": null,
+            "revision": null,
+            "moduleID": null,
+            "namespaceID": null,
+            "ownedBy": null,
+            "createdBy": null,
+            "createdAt": null,
+            "updatedBy": null,
+            "updatedAt": null,
+            "deletedBy": null,
+            "deletedAt": null,
+            "meta": null
+          },
+          "constraints": null
+        },
+        "privacy": {
+          "sensitivityLevelID": "0",
+          "usageDisclosure": ""
+        },
+        "discovery": {
+          "public": {
+            "result": [
+              {
+                "lang": "",
+                "fields": []
+              }
+            ]
+          },
+          "private": {
+            "result": [
+              {
+                "lang": "",
+                "fields": []
+              }
+            ]
+          },
+          "protected": {
+            "result": [
+              {
+                "lang": "",
+                "fields": []
+              }
+            ]
+          }
+        },
+        "recordRevisions": {
+          "enabled": false,
+          "ident": ""
+        },
+        "recordDeDup": {
+          "rules": []
+        }
+      },
+      "meta": {
+        "ui": {
+          "admin": {
+            "fields": []
+          }
+        }
+      },
+      "labels": {},
+      "createdAt": "2025-08-25T12:49:31.000Z",
+      "canUpdateModule": true,
+      "canDeleteModule": true,
+      "canCreateRecord": true,
+      "canCreateOwnedRecord": true,
+      "canGrant": true
+    },
+    {
+      "moduleID": "457843872276938753",
+      "namespaceID": "457836436119224321",
+      "name": "StakeholderAddress",
+      "handle": "stakeholder_address",
+      "fields": [
+        {
+          "fieldID": "457843872277004289",
+          "name": "stakeholder",
+          "kind": "Record",
+          "label": "Stakeholder",
+          "defaultValue": [],
+          "maxLength": 0,
+          "isRequired": true,
+          "isMulti": false,
+          "isSystem": false,
+          "isSortable": true,
+          "isFilterable": true,
+          "options": {
+            "description": {
+              "view": ""
+            },
+            "hint": {
+              "view": ""
+            },
+            "moduleID": "457843872268353537",
+            "labelField": "",
+            "recordLabelField": "",
+            "queryFields": [
+              "first_name",
+              "last_name"
+            ],
+            "selectType": "default",
+            "multiDelimiter": "\n",
+            "isUniqueMultiValue": false
+          },
+          "expressions": {},
+          "config": {
+            "dal": {
+              "encodingStrategy": null
+            },
+            "privacy": {
+              "sensitivityLevelID": "0",
+              "usageDisclosure": ""
+            },
+            "recordRevisions": {
+              "enabled": false
+            }
+          },
+          "canUpdateRecordValue": true,
+          "canReadRecordValue": true
+        },
+        {
+          "fieldID": "457843872277069825",
+          "name": "stakeholder_address",
+          "kind": "Geometry",
+          "label": "Address",
+          "defaultValue": [],
+          "maxLength": 0,
+          "isRequired": true,
+          "isMulti": false,
+          "isSystem": false,
+          "isSortable": false,
+          "isFilterable": false,
+          "options": {
+            "description": {
+              "view": ""
+            },
+            "hint": {
+              "view": ""
+            },
+            "center": {
+              "lat": 25.045792240303445,
+              "lng": 14.589843750000002
+            },
+            "zoom": 4,
+            "multiDelimiter": "\n",
+            "prefillWithCurrentLocation": false,
+            "hideCurrentLocationButton": false,
+            "hideGeoSearch": false
+          },
+          "expressions": {},
+          "config": {
+            "dal": {
+              "encodingStrategy": null
+            },
+            "privacy": {
+              "sensitivityLevelID": "0",
+              "usageDisclosure": ""
+            },
+            "recordRevisions": {
+              "enabled": false
+            }
+          },
+          "canUpdateRecordValue": true,
+          "canReadRecordValue": true
+        },
+        {
+          "fieldID": "457843872277135361",
+          "name": "is_primary",
+          "kind": "Bool",
+          "label": "Primary Address?",
+          "defaultValue": [],
+          "maxLength": 0,
+          "isRequired": false,
+          "isMulti": false,
+          "isSystem": false,
+          "isSortable": true,
+          "isFilterable": true,
+          "options": {
+            "description": {
+              "view": ""
+            },
+            "hint": {
+              "view": ""
+            },
+            "trueLabel": "",
+            "falseLabel": "",
+            "switch": false
+          },
+          "expressions": {},
+          "config": {
+            "dal": {
+              "encodingStrategy": null
+            },
+            "privacy": {
+              "sensitivityLevelID": "0",
+              "usageDisclosure": ""
+            },
+            "recordRevisions": {
+              "enabled": false
+            }
+          },
+          "canUpdateRecordValue": true,
+          "canReadRecordValue": true
+        }
+      ],
+      "issues": [],
+      "config": {
+        "dal": {
+          "connectionID": "457810218647093249",
+          "ident": "",
+          "systemFieldEncoding": {
+            "id": null,
+            "revision": null,
+            "moduleID": null,
+            "namespaceID": null,
+            "ownedBy": null,
+            "createdBy": null,
+            "createdAt": null,
+            "updatedBy": null,
+            "updatedAt": null,
+            "deletedBy": null,
+            "deletedAt": null,
+            "meta": null
+          },
+          "constraints": null
+        },
+        "privacy": {
+          "sensitivityLevelID": "0",
+          "usageDisclosure": ""
+        },
+        "discovery": {
+          "public": {
+            "result": [
+              {
+                "lang": "",
+                "fields": []
+              }
+            ]
+          },
+          "private": {
+            "result": [
+              {
+                "lang": "",
+                "fields": []
+              }
+            ]
+          },
+          "protected": {
+            "result": [
+              {
+                "lang": "",
+                "fields": []
+              }
+            ]
+          }
+        },
+        "recordRevisions": {
+          "enabled": false,
+          "ident": ""
+        },
+        "recordDeDup": {
+          "rules": []
+        }
+      },
+      "meta": {
+        "ui": {
+          "admin": {
+            "fields": []
+          }
+        }
+      },
+      "labels": {},
+      "createdAt": "2025-08-25T12:51:31.000Z",
+      "updatedAt": "2025-08-25T12:51:37.000Z",
+      "canUpdateModule": true,
+      "canDeleteModule": true,
+      "canCreateRecord": true,
+      "canCreateOwnedRecord": true,
+      "canGrant": true
+    },
+    {
+      "moduleID": "457843872279298049",
+      "namespaceID": "457836436119224321",
+      "name": "Sector",
+      "handle": "sector",
+      "fields": [
+        {
+          "fieldID": "457843872279363585",
+          "name": "sector",
+          "kind": "String",
+          "label": "Sector",
+          "defaultValue": [],
+          "maxLength": 0,
+          "isRequired": true,
+          "isMulti": false,
+          "isSystem": false,
+          "isSortable": true,
+          "isFilterable": true,
+          "options": {
+            "description": {
+              "view": ""
+            },
+            "hint": {
+              "view": ""
+            },
+            "multiLine": false,
+            "useRichTextEditor": false,
+            "multiDelimiter": "\n"
+          },
+          "expressions": {},
+          "config": {
+            "dal": {
+              "encodingStrategy": null
+            },
+            "privacy": {
+              "sensitivityLevelID": "0",
+              "usageDisclosure": ""
+            },
+            "recordRevisions": {
+              "enabled": false
+            }
+          },
+          "canUpdateRecordValue": true,
+          "canReadRecordValue": true
+        }
+      ],
+      "issues": [],
+      "config": {
+        "dal": {
+          "connectionID": "457810218647093249",
+          "ident": "",
+          "systemFieldEncoding": {
+            "id": null,
+            "revision": null,
+            "moduleID": null,
+            "namespaceID": null,
+            "ownedBy": null,
+            "createdBy": null,
+            "createdAt": null,
+            "updatedBy": null,
+            "updatedAt": null,
+            "deletedBy": null,
+            "deletedAt": null,
+            "meta": null
+          },
+          "constraints": null
+        },
+        "privacy": {
+          "sensitivityLevelID": "0",
+          "usageDisclosure": ""
+        },
+        "discovery": {
+          "public": {
+            "result": [
+              {
+                "lang": "",
+                "fields": []
+              }
+            ]
+          },
+          "private": {
+            "result": [
+              {
+                "lang": "",
+                "fields": []
+              }
+            ]
+          },
+          "protected": {
+            "result": [
+              {
+                "lang": "",
+                "fields": []
+              }
+            ]
+          }
+        },
+        "recordRevisions": {
+          "enabled": false,
+          "ident": ""
+        },
+        "recordDeDup": {
+          "rules": [
+            {
+              "name": "",
+              "strict": true,
+              "errorMessage": "",
+              "constraints": [
+                {
+                  "attribute": "sector",
+                  "modifier": "ignore-case",
+                  "multiValue": "equal"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "meta": {
+        "ui": {
+          "admin": {
+            "fields": []
+          }
+        }
+      },
+      "labels": {},
+      "createdAt": "2025-08-25T12:53:23.000Z",
+      "canUpdateModule": true,
+      "canDeleteModule": true,
+      "canCreateRecord": true,
+      "canCreateOwnedRecord": true,
+      "canGrant": true
+    }
+  ]
+}

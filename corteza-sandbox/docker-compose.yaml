@@ -1,0 +1,37 @@
+services:
+  server:
+    image: cortezaproject/corteza:${VERSION}
+    platform: linux/amd64   # run under emulation on Apple Silicon
+    restart: always
+    env_file: [ .env ]
+    depends_on:
+      db:
+        condition: service_healthy
+    ports: [ "127.0.0.1:18080:80" ]
+    volumes:
+      - ./data/server:/data
+
+  db:
+    # PostgreSQL Database
+    # See https://hub.docker.com/_/postgres for details
+    # Support for postgres 13, 14 and 15 is available in the latest version of Corteza
+    image: postgres:15
+      #    networks: [ internal ]
+    platform: linux/arm64/v8  # Postgres supports arm64 natively; either keep this or omit platform
+    restart: always
+    healthcheck: { test: ["CMD-SHELL", "pg_isready -U corteza"], interval: 10s, timeout: 5s, retries: 5 }
+    environment:
+      # Warning: these are values that are only used on 1st start
+      #          if you want to change it later, you need to do that
+      #          manually inside db container
+      POSTGRES_USER:     corteza
+      POSTGRES_PASSWORD: corteza
+      POSTGRES_DB: corteza
+    volumes:
+      - "dbdata:/var/lib/postgresql/data"
+    ports: 
+      - "5432:5432"
+
+volumes:
+  dbdata:
+  
