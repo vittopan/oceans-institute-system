@@ -1,3 +1,5 @@
 [submodule "corteza"]
 	path = corteza
-	url = https://github.com/cortezaproject/corteza.git
+  url = https://github.com/cortezaproject/corteza.git
+  branch = 2024.9.4
+
