@@ -1,0 +1,3 @@
+[submodule "corteza"]
+	path = corteza
+	url = https://github.com/cortezaproject/corteza.git
