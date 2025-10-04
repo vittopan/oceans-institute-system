@@ -2,3 +2,4 @@ compose/.env
 compose/data/
 compose/data/*
 compose/backup.sql
+compose/*.sql

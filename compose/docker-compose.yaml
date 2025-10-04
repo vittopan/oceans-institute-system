@@ -30,10 +30,12 @@ services:
     environment:
       - CORREDOR_LOG_LEVEL=info
       - CORREDOR_LISTEN_ADDR=0.0.0.0:80
+      - CORREDOR_API_BASEURL=https://40.82.192.101
+      - CORREDOR_API_AUTH_TOKEN=changeme
     volumes:
       - ./data/corredor:/data
       - ./corredor-scripts:/scripts
-    depends_on: [ db ]
+    depends_on: [ db,server ]
 
 volumes:
   dbdata:
