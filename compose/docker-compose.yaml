@@ -1,5 +1,6 @@
 services:
   server:
+    container_name: cortezaserver
     image: cortezaproject/corteza:${VERSION}
     restart: always
     env_file: [ .env ]
@@ -10,6 +11,7 @@ services:
       - ./data/server:/data
 
   db:
+    container_name: postgresdb
     image: postgres:15
     restart: always
     healthcheck:
