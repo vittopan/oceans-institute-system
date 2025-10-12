@@ -2,8 +2,8 @@
 
 ## Prerequisites
 
->[!INFO] Checking dependencies
->Run `docker-compose version` and `git --version`, if they are installed you can skip this section.
+> [!IMPORTANT]
+> Run `docker-compose version` and `git --version`, if they are installed you can skip this section.
 
 The server needs `docker-compose` and `git`. They usually come pre-installed on unix, however may need to be installed if ran on a Windows Server.
 
@@ -25,13 +25,13 @@ git clone https://github.com/vittopan/oceans-institute-system.git
 
 ## First-time installation
 
->[!WARN] Provided Files
+> [!WARNING]
 > If given a `.tar` file with an `.env`, `docker-compose.yaml`, and `.sql`, extract the contents to the same directory and refer to **Postgres (Containerised)**.
 
 ### Containerised Deployment
 
->[!WARN] If running externally
->The following steps assumes that the postgres database is ran along with the server and the webserver. If using a Data-as-a-Service (DaaS) instance, see **Postgres (External)**. 
+> [!WARNING]
+> The following steps assumes that the postgres database is ran along with the server and the webserver. If using a Data-as-a-Service (DaaS) instance, see **Postgres (External)**. 
 
 Before running the server, the postgres container must first be initialised. Ensure the docker system service or daemon is running before continuing. **Ensure you are in the correct directory (`cd` to the folder with the `docker-compose.yaml` file)**.
 
@@ -76,9 +76,9 @@ docker-compose up -d
 
 ### Postgres (External)
 
->[!WARN] Warning
->Connecting to an external Data-as-a-Service (DaaS) instance of postgres is unfortunately experimental and largely undocumented. This feature remains untested, therefore we highly recommend using the containerised solution on a virtual machine. Refer to existing corteza documentation, specifically **DevOps**->**Online Deployment Examples**.
->You can use this section as reference if attaching to the postgres docker container through `docker exec -it postgresdb`.
+> [!WARNING]
+> Connecting to an external Data-as-a-Service (DaaS) instance of postgres is unfortunately experimental and largely undocumented. This feature remains untested, therefore we highly recommend using the containerised solution on a virtual machine. Refer to existing corteza documentation, specifically **DevOps**->**Online Deployment Examples**.
+> You can use this section as reference if attaching to the postgres docker container through `docker exec -it postgresdb`.
 
 On your external postgres server, create the user `corteza` and the database `corteza`. Default password is `corteza` however this may be changed if needed.
 
