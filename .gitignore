@@ -1,5 +1,5 @@
-compose/.env
-compose/data/
-compose/data/*
-compose/backup.sql
-compose/*.sql
+.env
+
+/data/server/*
+/data/corredor/*
+/*.sql
