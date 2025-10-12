@@ -13,17 +13,13 @@ services:
   server:
     container_name: cortezaserver
     image: cortezaproject/corteza:${VERSION}
-    networks: [ proxy, internal ]
+    networks: [ internal ]
     restart: always
     env_file: [ .env ]
     depends_on: [ db ]
-    ports:
-      - "80:80"
     volumes:
       - ./data/server:/data
-    environment:
-      VIRTUAL_HOST: ${DOMAIN}
-      LETSENCRYPT_HOST: ${DOMAIN}
+    ports: [ "127.0.0.1:18080:80" ]
 
   db:
     container_name: postgresdb
