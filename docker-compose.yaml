@@ -20,7 +20,7 @@ services:
       timeout: 5s
       retries: 5
     volumes:
-      - "dbdata:/var/lib/postgresql/data"
+      - "./data/dbdata:/var/lib/postgresql/data"
     environment:
       POSTGRES_USER: corteza
       POSTGRES_PASSWORD: corteza
@@ -36,7 +36,7 @@ services:
       - CORREDOR_API_AUTH_TOKEN=changeme
     volumes:
       - ./data/corredor:/data
-      - ./corredor-scripts:/scripts
+      - ./data/corredor-scripts:/scripts
     depends_on: [ db,server ]
 
 volumes:
