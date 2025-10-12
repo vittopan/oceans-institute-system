@@ -1,0 +1,66 @@
+version: '2024.9'
+
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    networks: [ proxy ]
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+  server:
+    container_name: cortezaserver
+    image: cortezaproject/corteza:${VERSION}
+    networks: [ proxy, internal ]
+    restart: always
+    env_file: [ .env ]
+    depends_on: [ db ]
+    ports:
+      - "80:80"
+    volumes:
+      - ./data/server:/data
+    environment:
+      VIRTUAL_HOST: ${DOMAIN}
+      LETSENCRYPT_HOST: ${DOMAIN}
+
+  db:
+    container_name: postgresdb
+    image: postgres:15
+    networks: [ internal ]
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U corteza"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - "./data/dbdata:/var/lib/postgresql/data"
+    environment:
+      POSTGRES_USER: corteza
+      POSTGRES_PASSWORD: corteza
+      POSTGRES_DB: corteza
+
+  corredor:
+    image: cortezaproject/corteza-server-corredor:latest
+    networks: [ internal ]
+    restart: always
+    environment:
+      - CORREDOR_LOG_LEVEL=info
+      - CORREDOR_LISTEN_ADDR=0.0.0.0:80
+      - CORREDOR_API_BASEURL=https://40.82.192.101
+      - CORREDOR_API_AUTH_TOKEN=changeme
+    volumes:
+      - ./data/corredor:/data
+      - ./data/corredor-scripts:/scripts
+    depends_on: [ db,server ]
+
+volumes:
+  dbdata:
+
+networks:
+  internal: {}
+  proxy: { external: true }
