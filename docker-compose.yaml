@@ -1,3 +1,5 @@
+version: 2024.9
+
 services:
   server:
     container_name: cortezaserver
