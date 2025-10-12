@@ -19,7 +19,7 @@ services:
     depends_on: [ db ]
     volumes:
       - ./data/server:/data
-    ports: [ "127.0.0.1:18080" ]
+    ports: [ "18080:80" ]
 
   db:
     container_name: postgresdb
