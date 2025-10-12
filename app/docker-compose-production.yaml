@@ -1,7 +1,7 @@
 services:
   app:
     image: 'jc21/nginx-proxy-manager:latest'
-    networks: [ proxy, internal]
+    networks: [ proxy, internal ]
     restart: unless-stopped
     ports:
       - '80:80'
@@ -19,7 +19,7 @@ services:
     depends_on: [ db ]
     volumes:
       - ./data/server:/data
-    ports: [ "127.0.0.1:18080:80" ]
+    ports: [ "127.0.0.1:18080" ]
 
   db:
     container_name: postgresdb
