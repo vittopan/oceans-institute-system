@@ -53,13 +53,13 @@ Ensure `docker-compose.yaml` is properly configured. Refer (but not copy) to **M
 
 Make sure that `docker-compose.yaml` has the correct `POSTGRES_USER`, `POSTGRES_PASSWORD`, and `POSTGRES_DATABASE` (default: `corteza` for all). Follow the following steps if working with an `*.sql` file.
 
-1. `docker-compose up postgres`
-2. `cat corteza_db.sql | docker exec -i postgresdb psql -X -U corteza`, format: `cat <PATH_TO_SQL_FILE> | docker exec -i <CONTAINER_NAME> psql -X -U <POSTGRES_USER>`
+1. `docker-compose up db`
+2. `cat corteza_db.sql | docker exec -i postgresdb psql -X -U corteza`, format: `cat <PATH_TO_SQL_FILE> | docker-compose exec db psql -X -U <POSTGRES_USER>`
     **Troubleshooting**: 
-    - If `/restrict` is giving an error, try using: `{ printf '%s\n' '\unrestrict'; cat <PATH_TO_SQL_FILE>; } |   docker exec -i <CONTAINER_NAME> psql -X -U <POSTGRES_USER> -v ON_ERR`
-    - If permission is denied by the system, make sure to use an escalated-privilege shell through `sudo` or `sudo -s`.
+    - If `/restrict` is giving an error, try using: `{ printf '%s\n' '\unrestrict'; cat <PATH_TO_SQL_FILE>; } |   docker-compose exec db psql -X -U <POSTGRES_USER> -v ON_ERR`
+    - If permission is denied by the system, make sure to use an escalated-privilege shell through `sudo` or `sudo -s`, or use `docker-compose exec --privileged db ...`
 
-3. `docker restart postgresdb`
+3. `docker-compose restart db`
 
 #### 3. Running the corteza server
 
@@ -122,6 +122,62 @@ services:
 ```shell
 cat PATH_TO_SQL_FILE | psql -X -U POSTGRES_USER -d DATABASE_NAME -v ON_ERR
 ```
+## Production Deployment
+
+> [!IMPORTANT]
+> Production-facing web apps should use HTTPS (HTTP over SSL) to ensure integrity and privacy of data transfers. This requires a third party **certificate provider** that requires a **domain**. Before continuing, ensure you have a **domain** provided that is reachable, and also the **public IP** of the server.
+
+> [!WARNING]
+> If using a hosting service, make sure ports `443, 80, 81` are exposed. The nginx proxy manager uses port `81` for backend configuration. 
+For production-facing deployment of corteza, use the `docker-compose-production.yaml` instead. 
+
+`docker-compose-production.yaml` uses the **Nginx Proxy Manager**, a free open-source GUI-based web application for handling SSL certificates via LetsEncrypt.
+
+### First-time Access
+
+#### Nginx Proxy Manager Configuration
+
+After configuration of the postgres image and running `docker-compose -f docker-compose-production.yaml up -d`, access the NPM through `<PUBLIC_IP>:81`. Use `admin@example.com` and `changeme` for username/password respectively. This will need to be changed immediately after log-in for security purposes.
+
+Then, head to **SSL Certificates**->**Add SSL Certificate**->**LetsEncrypt**, enter the domain name provided by a provider e.g. `website-crm.uwa.edu.au`. The nginx proxy manager handles certificates automatically. 
+
+![SSL Certificate Entry Example](docs/ssl-cert-page.png)
+
+Alternatively if you have the **Certificate Key/File** through a different certificate provider upload them through **SSL Certificates**->**Add SSL Certificate**->**Custom**.
+
+
+**Then,** head to the **Hosts**->**Proxy Hosts** page, and click on **Add Proxy Host**.
+
+Under domain name, enter the same domain name you have been provided, and enter the following settings:
+
+- Scheme: **HTTP**
+- Forward Hostname/IP: `server`
+- Forward Port: `80`
+- Tick `Cache Assets`, `Block Common Exploits`, `Websockets Support` as `enabled`.
+- Leave access list as `publically available`.
+
+After, head to the **SSL** tab, and select the certificate already configured before.
+
+Finally, head to the **Advanced** section, and use these settings (unless directed otherwise):
+```bash
+proxy_set_header Host $server;
+proxy_set_header X-Forwarded-Proto $forward_scheme;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Forwarded-Host $server;
+proxy_set_header X-Forwarded-Port 443;
+proxy_set_header X-Forwarded-Ssl on;
+```
+
+Click **Save** to finalise these settings. To check if the proxy is configured properly, head to the same domain name, and see if it redirects you to the corteza login page. Use given credentials, and if you are able to reach the home page then you have now successfully configured **HTTP over SSL (HTTPS)**, encrypting data between your computer and the CRM website.
+
+![Corteza CRM Home Page Example](docs/corteza-homepage.png)
+
+For more information, see the official documentation for the nginx proxy manager here:
+- [Nginx Proxy Manager Docs](https://nginxproxymanager.com/guide/)
+
+
+
+
 # Other Documentation
 
 It is highly recommended to browse existing documentation provided by Corteza, Postgres, and Docker:
@@ -129,3 +185,4 @@ It is highly recommended to browse existing documentation provided by Corteza, P
 - [Corteza 2024.9 Docs](https://docs.cortezaproject.org/corteza-docs/2024.9/index.html)
 - [Postgres 15 Docs](https://www.postgresql.org/docs/15/index.html)
 - [Docker Compose Docs](https://docs.docker.com/compose/)
+- [Nginx Proxy Manager Docs](https://nginxproxymanager.com/guide/)
