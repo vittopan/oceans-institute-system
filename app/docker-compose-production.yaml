@@ -1,7 +1,7 @@
 services:
   app:
     image: 'jc21/nginx-proxy-manager:latest'
-    networks: [ proxy, internal ]
+    networks: [ proxy ]
     restart: unless-stopped
     ports:
       - '80:80'
@@ -13,12 +13,17 @@ services:
   server:
     container_name: cortezaserver
     image: cortezaproject/corteza:${VERSION}
-    networks: [ internal ]
+    networks: [ proxy, internal ]
     restart: always
     env_file: [ .env ]
     depends_on: [ db ]
+    ports:
+      - '80'
     volumes:
       - ./data/server:/data
+    environment:
+      LETSENCRYPT_HOST: ${DOMAIN}
+      VIRTUAL_HOST: ${DOMAIN}
 
   db:
     container_name: postgresdb
@@ -31,7 +36,7 @@ services:
       timeout: 5s
       retries: 5
     volumes:
-      - "./data/dbdata:/var/lib/postgresql/data"
+      - "dbdata:/var/lib/postgresql/data"
     environment:
       POSTGRES_USER: corteza
       POSTGRES_PASSWORD: corteza
